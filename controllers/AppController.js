@@ -10,6 +10,7 @@ export default class AppController {
     });
   }
 
+
   static getStats(req, res) {
     Promise.all([dbClient.nbUsers(), dbClient.nbFiles()])
       .then(([usersCount, filesCount]) => {
