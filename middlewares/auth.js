@@ -3,10 +3,10 @@ import { Request, Response, NextFunction } from 'express';
 import { getUserFromXToken, getUserFromAuthorization } from '../utils/auth';
 
 /**
- * Applies Basic authentication to a route.
- * @param {Request} req The Express request object.
- * @param {Response} res The Express response object.
- * @param {NextFunction} next The Express next function.
+ * Basic auth
+ * @param {Request} request
+ * @param {Response} response
+ * @param {NextFunction} next.
  */
 export const basicAuthenticate = async (req, res, next) => {
   const user = await getUserFromAuthorization(req);
@@ -20,10 +20,10 @@ export const basicAuthenticate = async (req, res, next) => {
 };
 
 /**
- * Applies X-Token authentication to a route.
- * @param {Request} req The Express request object.
- * @param {Response} res The Express response object.
- * @param {NextFunction} next The Express next function.
+ * token parser
+ * @param {Request} requset
+ * @param {Response} response
+ * @param {NextFunction} next
  */
 export const xTokenAuthenticate = async (req, res, next) => {
   const user = await getUserFromXToken(req);
