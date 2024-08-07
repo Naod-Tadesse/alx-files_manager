@@ -13,8 +13,8 @@ describe('+ FilesController', () => {
     password: 'mochi_mochi_whole_cake',
   };
   /**
-   * 3 sample files
-   * + 1 -> file
+   * s
+   * + 1 -> fi
    * + 2 -> folder
    * + 3 -> file for file 2
    */
