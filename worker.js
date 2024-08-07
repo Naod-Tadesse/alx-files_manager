@@ -12,9 +12,9 @@ const fileQueue = new Queue('thumbnail generation');
 const userQueue = new Queue('email sending');
 
 /**
- * Generates the thumbnail of an image with a given width size.
- * @param {String} filePath The location of the original file.
- * @param {number} size The width of the thumbnail.
+ * thubnail
+ * @param {String} original file location
+ * @param {number} size and width
  * @returns {Promise<void>}
  */
 const generateThumbnail = async (filePath, size) => {
@@ -66,11 +66,9 @@ userQueue.process(async (job, done) => {
     const mailContent = [
       '<div>',
       '<h3>Hello {{user.name}},</h3>',
-      'Welcome to <a href="https://github.com/B3zaleel/alx-files_manager">',
-      'ALX-Files_Manager</a>, ',
+      '<p>alx files manager</p>',
       'a simple file management API built with Node.js by ',
-      '<a href="https://github.com/B3zaleel">Bezaleel Olakunori</a>. ',
-      'We hope it meets your needs.',
+      'naod Taddese',
       '</div>',
     ].join('');
     Mailer.sendMail(Mailer.buildMessage(user.email, mailSubject, mailContent));
